@@ -13,17 +13,19 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-        maven { url 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven {
+            url = '/home/junting/repo/alpha-craft/MineDojo' // local MineDojo absolute path
+        }
     }
     dependencies {
         classpath 'org.ow2.asm:asm:6.0'
-        classpath('org.spongepowered:mixingradle:0.6-SNAPSHOT'){ // 0.6
+        // classpath('org.spongepowered:mixingradle:0.6-SNAPSHOT'){ // 0.6
+        classpath('MixinGradle-dcfaf61:MixinGradle:dcfaf61'){ // 0.6
             // Because forgegradle requires 6.0 (not -debug-all) while mixingradle depends on 5.0
             // and putting mixin right here will place it before forge in the class loader
             exclude group: 'org.ow2.asm', module: 'asm-debug-all'
         }
-
-        classpath 'com.github.yunfanjiang:ForgeGradle:FG_2.2_patched-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
     configurations {
         compileClasspath {
