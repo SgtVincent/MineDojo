@@ -45,7 +45,8 @@ plugins {
 }
 
 dependencies {
-    implementation 'com.github.yunfanjiang:ForgeGradle:FG_2.2_patched-SNAPSHOT'
+    // implementation 'com.github.yunfanjiang:ForgeGradle:FG_2.2_patched-SNAPSHOT'
+    implementation 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
 }
 
 apply plugin: 'net.minecraftforge.gradle.forge'
